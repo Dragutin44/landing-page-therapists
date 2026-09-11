@@ -1,0 +1,201 @@
+/* Reusable components */
+
+/* --- Site header --- */
+.site-header {
+  padding-block: var(--space-md);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: var(--color-ink);
+}
+
+.logo__image {
+  height: clamp(2.75rem, 2.1rem + 2.8vw, 4.5rem);
+  width: auto;
+}
+
+.logo__image--footer {
+  height: clamp(3rem, 2.3rem + 2.2vw, 4rem);
+}
+
+/* --- Kicker label --- */
+.kicker {
+  display: inline-block;
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-dark);
+  margin-block-end: var(--space-xs);
+}
+
+.section--dark .kicker {
+  color: var(--color-accent);
+}
+
+/* --- Card --- */
+.card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-lg);
+  transition: box-shadow 0.25s var(--ease-out-expo), transform 0.25s var(--ease-out-expo);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-2px);
+}
+
+.icon-badge {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent-soft);
+  color: var(--color-accent-dark);
+  margin-block-end: var(--space-md);
+}
+
+.card h3 {
+  font-size: var(--fs-h4);
+  margin-block-end: var(--space-2xs);
+}
+
+.card p {
+  font-size: var(--fs-body);
+}
+
+/* --- Calendly embed shell --- */
+.calendly-embed {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  background: var(--color-card-bg);
+  min-height: 37.5rem;
+}
+
+/* --- Testimonial card --- */
+.testimonial-card {
+  text-align: left;
+}
+
+.testimonial-card__name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--color-ink);
+  font-size: var(--fs-body);
+}
+
+.testimonial-card__role {
+  font-size: var(--fs-label);
+  color: var(--color-body-muted);
+  margin-block-end: var(--space-sm);
+}
+
+.video-thumb {
+  position: relative;
+  aspect-ratio: 9 / 16;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: var(--color-ink);
+  box-shadow: var(--shadow-card);
+}
+
+.video-thumb iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* --- Stats gallery: real call-tracking screenshots, full width, stacked --- */
+.stats-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.stats-gallery__item {
+  margin: 0;
+  background: var(--color-card-bg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-sm);
+}
+
+.stats-gallery__item img {
+  border-radius: var(--radius-sm);
+  width: 100%;
+  height: auto;
+}
+
+/* --- Quote screenshots --- */
+.quote-shot {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
+  width: 100%;
+  height: auto;
+  background: var(--color-card-bg);
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2xs);
+  min-height: 2.75rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-pill);
+  background: var(--color-accent-bright);
+  color: var(--color-ink);
+  font-weight: 700;
+  font-size: var(--fs-body);
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s var(--ease-out-expo), box-shadow 0.2s var(--ease-out-expo);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+/* --- Guarantee checklist --- */
+.guarantee-card {
+  background: var(--color-card-bg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--space-lg);
+}
+
+.guarantee-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding-block: var(--space-xs);
+  color: var(--color-ink-soft);
+  font-size: var(--fs-body);
+}
+
+.guarantee-list li + li {
+  border-block-start: 1px solid var(--color-border);
+}
+
+.guarantee-list svg {
+  color: var(--color-accent);
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* --- Footer --- */
+.site-footer {
+  padding-block: var(--space-lg);
+  color: var(--color-body-muted);
+}

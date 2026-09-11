@@ -1,0 +1,84 @@
+/*
+  Shared layout primitives. Every section reuses .container so max-width
+  and side padding stay identical across the whole page (fluid via
+  --container-pad, never a fixed breakpoint value).
+*/
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-pad);
+}
+
+.section {
+  padding-block: var(--space-section);
+}
+
+.section--soft {
+  background: var(--color-bg-soft);
+}
+
+.section--dark {
+  background: var(--color-bg-dark);
+  color: var(--color-text-on-dark);
+}
+
+.section--dark h2,
+.section--dark h3 {
+  color: var(--color-text-on-dark);
+}
+
+.section--dark p {
+  color: var(--color-text-on-dark-muted);
+}
+
+.section__head {
+  max-width: 42rem;
+  margin-block-end: var(--space-lg);
+}
+
+.section__head p {
+  margin-block-start: var(--space-sm);
+  font-size: var(--fs-h4);
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.grid {
+  display: grid;
+  gap: var(--space-gap);
+}
+
+.grid--3 {
+  grid-template-columns: repeat(auto-fit, minmax(15.5rem, 1fr));
+}
+
+.grid--5 {
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+}
+
+.grid--2 {
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+}
+
+.grid--split {
+  display: grid;
+  gap: var(--space-xl);
+  align-items: center;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 56rem) {
+  .grid--split {
+    grid-template-columns: 1.1fr 1fr;
+  }
+
+  .grid--split--guarantee {
+    grid-template-columns: 1fr 1fr;
+  }
+}

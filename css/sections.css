@@ -1,0 +1,64 @@
+/* Per-section layout tweaks that don't belong in generic components */
+
+/* --- Hero --- */
+.hero__copy p {
+  margin-block-start: var(--space-sm);
+}
+
+.hero__fineprint {
+  margin-block-start: var(--space-lg);
+  font-size: var(--fs-label);
+  color: var(--color-body-muted);
+}
+
+/* --- Testimonials: one per row on mobile so a 9:16 video isn't squeezed
+   into half a phone-width column --- */
+.testimonials__grid {
+  align-items: start;
+}
+
+@media (max-width: 36rem) {
+  .testimonials__grid {
+    grid-template-columns: 1fr;
+    max-width: 20rem;
+    margin-inline: auto;
+  }
+}
+
+/* --- Quotes: two explicit columns on wide screens, alternating side,
+   independent of .grid--2's auto-fit (which would fit 3 on this width) --- */
+@media (min-width: 56rem) {
+  .quotes__grid {
+    grid-template-columns: repeat(2, minmax(0, 34rem));
+    justify-content: center;
+  }
+
+  .quotes__grid > :nth-child(even) {
+    justify-self: end;
+  }
+}
+
+/* --- Guarantee --- */
+.guarantee__copy p {
+  margin-block-start: var(--space-sm);
+}
+
+/* --- Closing CTA: repeats the hero's ask for readers who scrolled the
+   whole page, per landing-page conversion best practice --- */
+.closing-cta {
+  padding-block: var(--space-xl);
+  background: var(--color-bg-soft);
+  text-align: center;
+}
+
+.closing-cta__inner {
+  max-width: 34rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.closing-cta__inner .btn {
+  margin-block-start: var(--space-xs);
+}

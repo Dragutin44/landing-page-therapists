@@ -1,0 +1,73 @@
+/*
+  Design tokens: color, spacing, radius, shadow, fluid type scale.
+  Type scale uses clamp(min, preferred, max) with rem bounds so browser
+  zoom / user font-size preferences keep working (WCAG 1.4.4). Viewport
+  range for the fluid ramp is 320px -> 1280px; every step keeps max <= 2.5x
+  min so 200% zoom always has room.
+*/
+
+:root {
+  /* Color: green + sage + cream, pulled from the Caseload Lift reference
+     palette (Downloads/Caseload Lift Landing Page.html) */
+  --color-ink: #2e3b2f;
+  --color-ink-soft: #3f5842;
+  --color-body: #6b7568;
+  --color-body-muted: #9aa48f;
+  --color-accent: #5c7a5f;
+  --color-accent-dark: #3f5842;
+  --color-accent-bright: #8fbf8a;
+  --color-accent-soft: #c7d6be;
+
+  --color-bg: #faf7f0;
+  --color-bg-soft: #f3efe4;
+  --color-bg-dark: #2e3b2f;
+
+  --color-card-bg: #ffffff;
+  --color-border: #e5ded0;
+  --color-text-on-dark: #ffffff;
+  --color-text-on-dark-muted: #c9d3c3;
+
+  /* Elevation */
+  --shadow-card: 0 1px 2px rgba(46, 59, 47, 0.07), 0 12px 28px -12px rgba(46, 59, 47, 0.2);
+  --shadow-card-hover: 0 2px 4px rgba(46, 59, 47, 0.1), 0 20px 36px -14px rgba(46, 59, 47, 0.26);
+
+  /* Radius */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-pill: 999px;
+
+  /* Container */
+  --container-max: 75rem; /* 1200px */
+  --container-pad: clamp(1rem, 5vw, 3rem);
+
+  /* Spacing scale (fluid where it benefits from breathing room) */
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: clamp(1.25rem, 1rem + 1vw, 2rem);
+  --space-lg: clamp(2rem, 1.5rem + 2vw, 3rem);
+  --space-xl: clamp(3rem, 2rem + 4vw, 5rem);
+  --space-section: clamp(3.5rem, 2.5rem + 4.5vw, 7rem);
+  --space-gap: clamp(1rem, 0.75rem + 1.2vw, 2rem);
+
+  /* Fluid type scale: min @ 320px -> max @ 1280px, expressed in rem */
+  --fs-label: 0.8125rem; /* fixed: small UI labels don't need to scale */
+  --fs-body: clamp(1rem, 0.9557rem + 0.2170vw, 1.125rem);
+  --fs-h4: clamp(1.125rem, 1.0446rem + 0.3804vw, 1.375rem);
+  --fs-h3: clamp(1.375rem, 1.2083rem + 0.8333vw, 1.875rem);
+  --fs-h2: clamp(1.75rem, 1.4167rem + 1.6667vw, 2.75rem);
+  --fs-h1: clamp(2.25rem, 1.75rem + 2.5vw, 3.75rem);
+
+  --line-tight: 1.12;
+  --line-snug: 1.3;
+  --line-body: 1.6;
+
+  --font-heading: "Raleway", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Open Sans", "Segoe UI", system-ui, sans-serif;
+
+  --measure: 65ch;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
